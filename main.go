@@ -7,9 +7,9 @@ import (
 var StartTime int64
 
 func InitializeTimer() {
-	StartTime = time.Now().UnixMicro()
+	StartTime = time.Now().UTC().UnixMilli()
 }
 
 func GetTimer() any {
-	return time.Now().UnixMicro() - StartTime
+	return time.Now().UTC().UnixMilli() - StartTime
 }
