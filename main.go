@@ -4,12 +4,12 @@ import (
 	"time"
 )
 
-var StartTime time.Time
+var StartTime int64
 
 func InitializeTimer() {
-	StartTime = time.Now()
+	StartTime = time.Now().UnixMicro()
 }
 
 func GetTimer() any {
-	return time.Since(StartTime)
+	return time.Now().UnixMicro() - StartTime
 }
